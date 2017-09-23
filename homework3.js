@@ -14,8 +14,19 @@ const fullName = function(firstName, lastName) {
 	return firstName + ' ' + lastName;
 };
 
+//helper for longestStr function
+const max = function(num, num1, num2) {
+	if (num > num1 && num > num2) {
+		return num;
+	}
+	if(num1 > num && num1 > num2) {
+		return num1;
+	}
+	return num2;
+};
+
 const longestStr = function(str, str1, str2) {
-	const maxLength = Math.max(str.length, str1.length, str2.length);
+	const maxLength = max(str.length, str1.length, str2.length);
 
 	if(maxLength === str.length) {
 		return str;
